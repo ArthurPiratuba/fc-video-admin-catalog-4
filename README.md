@@ -1,22 +1,18 @@
 # Atividade prática para o curso Fullcycle
 
-## Desafio - Cobertura de testes Typescript e Casos de uso de categoria
-Neste desafio você deverá criar os casos de uso de categoria:
-
-Criar uma categoria
-Atualizar uma categoria
-Excluir uma categoria
-Buscar categorias
-Pegar uma categoria
-Por fim, devemos ter um projeto passando liso nos testes e em erros de typescript. Você deverá configurar o Jest para não passar nos testes se caso menos de 80% do código não estiver coberto pelos testes e configurar um comando NPM "tsc:check" para verificar erros de TypeScript no projeto.
-
-Para passar neste desafio, todos os testes deverão passar e não deverá ter nenhum erro de TypeScript.
+## Desafio - Endpoints de Categoria e Cast Member
+Neste desafio você deverá criar os CRUDs de categoria e cast member.
+A categoria já tem todo o exemplo de tudo que foi passado no curso. Use-o como referência.
+Já Cast Member são membros do elenco dos conteúdos da CodeFlix. Os membros serão ator ou diretor, eles terão um nome e a data em que foram criados.
+Você deve criar uma entidade CastMember que tenha os seguintes campos:
+- name - deve ser string e um tamanho máximo de 255 caracteres.
+- type (aqui pode ser um Objeto de valor ou um Enum do TypeScript). Para diretor o valor do campo é 1, para ator é 2.
+- created_at
+Aplique as validações conforme foi mostrado no curso.
+Na listagem de cast members, devemos conseguir ordenar por nome ou created_at e buscar por name ou type.
+Aplique toda a pirâmide de testes e mantém a cobertura em no mínimo em 80%.
+Ao rodar os comandos: npm run test:cov e npm run tsc:check devemos testar tudo e não ter nenhum erro.
 
 Bom trabalho!
 
 ## Principais lições aprendidas
-- Sequelize ORM
-- Casos de Uso (na prática)
-- Alguns cenários para uso do operador Spread (...)
-- Paginação de dados com ORM e Casos de Uso
-- Alguns conceitos do Jest
