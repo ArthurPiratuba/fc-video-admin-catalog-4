@@ -1,6 +1,7 @@
-import { Category } from "../../../domain/category.entity";
-import { Uuid } from "../../../domain/uuid.vo";
-import { CategoryModel } from "./category.model";
+import { LoadEntityError } from '../../../../shared/domain/validators/validation.error';
+import { Category } from '../../../domain/category.entity';
+import { Uuid } from '../../../domain/uuid.vo';
+import { CategoryModel } from './category.model';
 
 export class CategoryModelMapper {
     static toModel(entity: Category): CategoryModel {
@@ -22,10 +23,10 @@ export class CategoryModelMapper {
             created_at: model.created_at,
         });
 
-        Category.validate(category);
-        // if (category.notification.hasErrors()) {
-        //     throw new LoadEntityError(category.notification.toJSON());
-        // }
+        category.validate();
+        if (category.notification.hasErrors()) {
+            throw new LoadEntityError(category.notification.toJSON());
+        }
         return category;
     }
 }
