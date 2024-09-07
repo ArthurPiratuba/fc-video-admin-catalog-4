@@ -1,14 +1,15 @@
-import { LoadEntityError } from "../../../../shared/domain/validators/validation.error";
-import { setupSequelize } from "../../../../shared/infra/testing/helpers";
-import { Category, CategoryId } from "../../../domain/category.entity";
-import { CategoryModelMapper } from "./category-model-mapper";
+import { setupSequelize } from "@core/shared/infra/testing/helpers";
 import { CategoryModel } from "./category.model";
+import { CategoryModelMapper } from "./category-model-mapper";
+import { LoadEntityError } from "@core/shared/domain/validators/validation.error";
+import { Category, CategoryId } from "@core/category/domain/category.entity";
 
 describe('CategoryModelMapper Integration Tests', () => {
     setupSequelize({ models: [CategoryModel] });
 
     it('should throws error when category is invalid', () => {
         expect.assertions(2);
+        //@ts-expect-error - This is an invalid category
         const model = CategoryModel.build({
             category_id: '9366b7dc-2d71-4799-b91c-c64adb205104',
             name: 'a'.repeat(256),
