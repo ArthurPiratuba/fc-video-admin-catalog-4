@@ -199,7 +199,7 @@ const config: Config = {
 
   moduleFileExtensions: ['js', 'json', 'ts'],
   rootDir: 'src',
-  testRegex: '.*\\..*test\\.ts$',
+  testRegex: '.*\\..*spec\\.ts$',
   transform: {
     '^.+\\.(t|j)s$': '@swc/jest',
   },
@@ -225,7 +225,7 @@ const config: Config = {
     },
   },
   testEnvironment: 'node',
-  setupFilesAfterEnv: ['./shared/infra/testing/expect-helpers.ts'],
+  setupFilesAfterEnv: ['./core/shared/infra/testing/expect-helpers.ts'],
   coverageProvider: 'v8',
   clearMocks: true,
 };
