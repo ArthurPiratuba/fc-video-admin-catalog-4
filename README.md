@@ -16,3 +16,5 @@ Ao rodar os comandos: npm run test:cov e npm run tsc:check devemos testar tudo e
 Bom trabalho!
 
 ## Principais lições aprendidas
+- Configurações do NestJS
+- Carregamento assincrono de módulos
