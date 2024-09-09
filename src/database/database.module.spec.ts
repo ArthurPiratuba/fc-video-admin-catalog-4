@@ -36,7 +36,7 @@ describe('DatabaseModule Unit Tests', () => {
         });
     });
 
-    describe.skip('mysql connection', () => {
+    describe('mysql connection', () => {
         const connOptions = {
             DB_VENDOR: 'mysql',
             DB_HOST: 'db',
