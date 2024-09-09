@@ -1,5 +1,5 @@
+import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 import { UseCase } from "../../../../shared/application/use-case.interface";
-import { NotFoundError } from "../../../../shared/domain/not-found.error";
 import { Category, CategoryId } from "../../../domain/category.entity";
 import { CategoryRepository } from "../../../domain/category.repository";
 import { CategoryOutput, CategoryOutputMapper } from "../common/category-output";

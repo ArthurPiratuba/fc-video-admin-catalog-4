@@ -1,4 +1,4 @@
-import { NotFoundError } from "../../../../shared/domain/not-found.error";
+import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 import { Category, CategoryId } from "../../../domain/category.entity";
 import { InvalidUuidError } from "../../../domain/uuid.vo";
 import { CategoryInMemoryRepository } from "../../../infra/db/in-memory/category-in-memory.repository";

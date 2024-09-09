@@ -1,6 +1,6 @@
+import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 import { Uuid } from "../../../../category/domain/uuid.vo";
 import { Entity } from "../../../domain/entity";
-import { NotFoundError } from "../../../domain/not-found.error";
 import { InMemoryRepository } from "./in-memory.repository";
 
 type StubEntityConstructorProps = {

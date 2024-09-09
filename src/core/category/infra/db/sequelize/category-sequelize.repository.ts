@@ -3,9 +3,9 @@ import { CategoryRepository, CategorySearchParams, CategorySearchResult } from "
 import { CategoryModel } from "./category.model";
 import { Category } from "../../../domain/category.entity";
 import { CategoryModelMapper } from "./category-model-mapper";
-import { NotFoundError } from "../../../../shared/domain/not-found.error";
 import { Uuid } from "../../../domain/uuid.vo";
 import { SortDirection } from "../../../../shared/domain/repository/search-params";
+import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 
 export class CategorySequelizeRepository implements CategoryRepository {
     sortableFields: string[] = ['name', 'created_at'];
