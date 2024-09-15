@@ -18,7 +18,7 @@ export type CategoryCreateCommand = {
   is_active?: boolean;
 };
 
-export class CategoryId extends Uuid {}
+export class CategoryId extends Uuid { }
 
 export class Category extends Entity {
   category_id: CategoryId;

@@ -18,3 +18,4 @@ Bom trabalho!
 ## Principais lições aprendidas
 - Configurações do NestJS
 - Carregamento assincrono de módulos
+- Fixture
