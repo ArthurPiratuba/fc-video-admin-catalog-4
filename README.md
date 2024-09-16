@@ -19,3 +19,4 @@ Bom trabalho!
 - Configurações do NestJS
 - Carregamento assincrono de módulos
 - Fixture
+- Testes End-to-end (e2e)
