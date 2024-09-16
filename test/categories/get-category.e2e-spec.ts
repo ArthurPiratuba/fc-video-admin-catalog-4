@@ -6,7 +6,7 @@ import { CategoriesController } from '../../src/nest-modules/categories-module/c
 import { GetCategoryFixture } from '../../src/nest-modules/categories-module/testing/category-fixture';
 import { startApp } from '../../src/nest-modules/shared-module/testing/helper';
 import { CategoryRepository } from '../../src/core/category/domain/category.repository';
-import { Category } from '../../src/core/category/domain/category.entity';
+import { Category } from '../../src/core/category/domain/category.aggregate';
 
 describe('CategoriesController (e2e)', () => {
     const nestApp = startApp();

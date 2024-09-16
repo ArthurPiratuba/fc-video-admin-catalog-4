@@ -1,7 +1,7 @@
 import { CategoryInMemoryRepository } from "@core/category/infra/db/in-memory/category-in-memory.repository";
 import { CategoriesIdExistsInDatabaseValidator } from "./categories-ids-exists-in-database.validator";
-import { Category, CategoryId } from "@core/category/domain/category.entity";
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
+import { Category, CategoryId } from "@core/category/domain/category.aggregate";
 
 describe('CategoriesIdExistsInDatabaseValidator Unit Tests', () => {
     let categoryRepo: CategoryInMemoryRepository;

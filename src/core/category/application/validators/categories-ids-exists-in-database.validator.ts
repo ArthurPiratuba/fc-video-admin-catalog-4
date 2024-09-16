@@ -1,4 +1,4 @@
-import { Category, CategoryId } from "@core/category/domain/category.entity";
+import { Category, CategoryId } from "@core/category/domain/category.aggregate";
 import { CategoryRepository } from "@core/category/domain/category.repository";
 import { Either } from "@core/shared/domain/either";
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";

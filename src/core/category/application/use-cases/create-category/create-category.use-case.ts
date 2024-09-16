@@ -1,6 +1,6 @@
 import { UseCase } from '../../../../shared/application/use-case.interface';
 import { EntityValidationError } from '../../../../shared/domain/validators/validation.error';
-import { Category } from '../../../domain/category.entity';
+import { Category } from '../../../domain/category.aggregate';
 import { CategoryRepository } from '../../../domain/category.repository';
 import {
   CategoryOutput,

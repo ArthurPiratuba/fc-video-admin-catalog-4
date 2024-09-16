@@ -1,7 +1,7 @@
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 import { UseCase } from "../../../../shared/application/use-case.interface";
 import { EntityValidationError } from "../../../../shared/domain/validators/validation.error";
-import { Category, CategoryId } from "../../../domain/category.entity";
+import { Category, CategoryId } from "../../../domain/category.aggregate";
 import { CategoryRepository } from "../../../domain/category.repository";
 import { CategoryOutput, CategoryOutputMapper } from "../common/category-output";
 import { UpdateCategoryInput } from "./update-category.input";

@@ -1,5 +1,5 @@
 import { UseCase } from "../../../../shared/application/use-case.interface";
-import { CategoryId } from "../../../domain/category.entity";
+import { CategoryId } from "../../../domain/category.aggregate";
 import { CategoryRepository } from "../../../domain/category.repository";
 
 export class DeleteCategoryUseCase

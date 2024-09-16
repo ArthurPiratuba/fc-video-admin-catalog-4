@@ -7,7 +7,7 @@ import { CategoryModel } from './category.model';
 import { CategoryModelMapper } from './category-model-mapper';
 import { SortDirection } from '../../../../shared/domain/repository/search-params';
 import { InvalidArgumentError } from '../../../../shared/domain/errors/invalid-argument.error';
-import { Category, CategoryId } from '../../../domain/category.entity';
+import { Category, CategoryId } from '../../../domain/category.aggregate';
 
 export class CategorySequelizeRepository implements CategoryRepository {
     sortableFields: string[] = ['name', 'created_at'];

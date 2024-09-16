@@ -6,7 +6,7 @@ import { CategoryOutputMapper } from '../../src/core/category/application/use-ca
 import { CategoriesController } from '../../src/nest-modules/categories-module/categories.controller';
 import { UpdateCategoryFixture } from '../../src/nest-modules/categories-module/testing/category-fixture';
 import { startApp } from '../../src/nest-modules/shared-module/testing/helper';
-import { Category } from '../../src/core/category/domain/category.entity';
+import { Category } from '../../src/core/category/domain/category.aggregate';
 import { Uuid } from '../../src/core/category/domain/uuid.vo';
 
 describe('CategoriesController (e2e)', () => {

@@ -1,5 +1,5 @@
 import { LoadEntityError } from '../../../../shared/domain/validators/validation.error';
-import { Category } from '../../../domain/category.entity';
+import { Category } from '../../../domain/category.aggregate';
 import { Uuid } from '../../../domain/uuid.vo';
 import { CategoryModel } from './category.model';
 

@@ -1,5 +1,5 @@
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
-import { Category, CategoryId } from "../../../domain/category.entity";
+import { Category, CategoryId } from "../../../domain/category.aggregate";
 import { InvalidUuidError } from "../../../domain/uuid.vo";
 import { CategoryInMemoryRepository } from "../../../infra/db/in-memory/category-in-memory.repository";
 import { UpdateCategoryUseCase } from "./update-category.use-case";

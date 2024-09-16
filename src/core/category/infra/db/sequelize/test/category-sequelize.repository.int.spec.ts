@@ -1,6 +1,6 @@
 import { NotFoundError } from "../../../../../shared/domain/errors/not-found.error";
 import { setupSequelize } from "../../../../../shared/infra/testing/helpers";
-import { Category } from "../../../../domain/category.entity";
+import { Category } from "../../../../domain/category.aggregate";
 import { CategorySearchParams, CategorySearchResult } from "../../../../domain/category.repository";
 import { Uuid } from "../../../../domain/uuid.vo";
 import { CategoryModelMapper } from "../category-model-mapper";

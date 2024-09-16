@@ -12,8 +12,8 @@ import { GetCategoryUseCase } from '../../../core/category/application/use-cases
 import { DeleteCategoryUseCase } from '../../../core/category/application/use-cases/delete-category/delete-category.use-case';
 import { CategoryCollectionPresenter, CategoryPresenter, } from '../categories.presenter';
 import { CategoryOutputMapper } from '../../../core/category/application/use-cases/common/category-output';
-import { Category, CategoryId } from '@core/category/domain/category.entity';
 import { CreateCategoryFixture, ListCategoriesFixture, UpdateCategoryFixture } from '../testing/category-fixture';
+import { Category, CategoryId } from '@core/category/domain/category.aggregate';
 
 describe('CategoriesController Integration Tests', () => {
     let controller: CategoriesController;

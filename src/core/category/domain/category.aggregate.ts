@@ -1,8 +1,8 @@
-import { Entity } from "../../shared/domain/entity";
-import { ValueObject } from "../../shared/domain/value-object";
-import { CategoryFakeBuilder } from "./category-fake.builder";
-import { CategoryValidatorFactory } from "./category.validator";
-import { Uuid } from "./uuid.vo";
+import { AggregateRoot } from '../../shared/domain/aggregate-root';
+import { ValueObject } from '../../shared/domain/value-object';
+import { CategoryFakeBuilder } from './category-fake.builder';
+import { CategoryValidatorFactory } from './category.validator';
+import { Uuid } from './uuid.vo';
 
 export type CategoryConstructorProps = {
   category_id?: CategoryId;
@@ -20,7 +20,7 @@ export type CategoryCreateCommand = {
 
 export class CategoryId extends Uuid { }
 
-export class Category extends Entity {
+export class Category extends AggregateRoot {
   category_id: CategoryId;
   name: string;
   description: string | null;
