@@ -1,11 +1,13 @@
-import { literal, Op } from "sequelize";
-import { CategoryRepository, CategorySearchParams, CategorySearchResult } from "../../../domain/category.repository";
-import { CategoryModel } from "./category.model";
-import { Category } from "../../../domain/category.entity";
-import { CategoryModelMapper } from "./category-model-mapper";
-import { Uuid } from "../../../domain/uuid.vo";
-import { SortDirection } from "../../../../shared/domain/repository/search-params";
-import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
+import { Op, literal } from 'sequelize';
+import { NotFoundError } from '../../../../shared/domain/errors/not-found.error';
+import {
+    CategorySearchParams, CategorySearchResult, CategoryRepository,
+} from '../../../domain/category.repository';
+import { CategoryModel } from './category.model';
+import { CategoryModelMapper } from './category-model-mapper';
+import { SortDirection } from '../../../../shared/domain/repository/search-params';
+import { InvalidArgumentError } from '../../../../shared/domain/errors/invalid-argument.error';
+import { Category, CategoryId } from '../../../domain/category.entity';
 
 export class CategorySequelizeRepository implements CategoryRepository {
     sortableFields: string[] = ['name', 'created_at'];
@@ -31,14 +33,21 @@ export class CategorySequelizeRepository implements CategoryRepository {
 
     async update(entity: Category): Promise<void> {
         const id = entity.category_id.id;
+
         const modelProps = CategoryModelMapper.toModel(entity);
-        const [affectedRows] = await this.categoryModel.update(modelProps.toJSON(), {
-            where: { category_id: entity.category_id.id }
-        });
-        if (affectedRows !== 1) throw new NotFoundError(id, this.getEntity());
+        const [affectedRows] = await this.categoryModel.update(
+            modelProps.toJSON(),
+            {
+                where: { category_id: entity.category_id.id },
+            },
+        );
+
+        if (affectedRows !== 1) {
+            throw new NotFoundError(id, this.getEntity());
+        }
     }
 
-    async delete(category_id: Uuid): Promise<void> {
+    async delete(category_id: CategoryId): Promise<void> {
         const id = category_id.id;
 
         const affectedRows = await this.categoryModel.destroy({
@@ -50,7 +59,7 @@ export class CategorySequelizeRepository implements CategoryRepository {
         }
     }
 
-    async findByIds(ids: Uuid[]): Promise<Category[]> {
+    async findByIds(ids: CategoryId[]): Promise<Category[]> {
         const models = await this.categoryModel.findAll({
             where: {
                 category_id: {
@@ -62,11 +71,10 @@ export class CategorySequelizeRepository implements CategoryRepository {
     }
 
     async existsById(
-        ids: Uuid[],
-    ): Promise<{ exists: Uuid[]; not_exists: Uuid[] }> {
+        ids: CategoryId[],
+    ): Promise<{ exists: CategoryId[]; not_exists: CategoryId[] }> {
         if (!ids.length) {
-            //throw new InvalidArgumentError(
-            throw new Error(
+            throw new InvalidArgumentError(
                 'ids must be an array with at least one element',
             );
         }
@@ -80,7 +88,7 @@ export class CategorySequelizeRepository implements CategoryRepository {
             },
         });
         const existsCategoryIds = existsCategoryModels.map(
-            (m) => new Uuid(m.category_id),
+            (m) => new CategoryId(m.category_id),
         );
         const notExistsCategoryIds = ids.filter(
             (id) => !existsCategoryIds.some((e) => e.equals(id)),
@@ -91,8 +99,9 @@ export class CategorySequelizeRepository implements CategoryRepository {
         };
     }
 
-    async findById(entity_id: Uuid): Promise<Category | null> {
+    async findById(entity_id: CategoryId): Promise<Category | null> {
         const model = await this.categoryModel.findByPk(entity_id.id);
+
         return model ? CategoryModelMapper.toEntity(model) : null;
     }
 
@@ -131,9 +140,7 @@ export class CategorySequelizeRepository implements CategoryRepository {
 
     private formatSort(sort: string, sort_dir: SortDirection) {
         const dialect = this.categoryModel.sequelize!.getDialect() as 'mysql';
-        //@ts-ignore
         if (this.orderBy[dialect] && this.orderBy[dialect][sort]) {
-            //@ts-ignore
             return this.orderBy[dialect][sort](sort_dir);
         }
         return [[sort, sort_dir]];

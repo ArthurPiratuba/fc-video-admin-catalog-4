@@ -1,4 +1,3 @@
-import { SortDirection } from '@core/shared/domain/repository/search-params';
 import { CategoriesController } from '../categories.controller';
 import { CreateCategoryOutput } from '../../../core/category/application/use-cases/create-category/create-category.use-case';
 import { CreateCategoryDto } from '../dto/create-category.dto';
@@ -10,6 +9,7 @@ import { UpdateCategoryOutput } from '../../../core/category/application/use-cas
 import { UpdateCategoryInput } from '../../../core/category/application/use-cases/update-category/update-category.input';
 import { GetCategoryOutput } from '../../../core/category/application/use-cases/get-category/get-category.use-case';
 import { ListCategoriesOutput } from '../../../core/category/application/use-cases/list-categories/list-categories.use-case';
+import { SortDirection } from '../../../core/shared/domain/repository/search-params';
 
 describe('CategoriesController Unit Tests', () => {
   let controller: CategoriesController;
