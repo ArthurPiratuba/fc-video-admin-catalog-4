@@ -1,5 +1,5 @@
+import { Uuid } from "@core/shared/domain/value-objects/uuid.vo";
 import { setupSequelize } from "../../../../shared/infra/testing/helpers";
-import { Uuid } from "../../../domain/uuid.vo";
 import { CategorySequelizeRepository } from "../../../infra/db/sequelize/category-sequelize.repository";
 import { CategoryModel } from "../../../infra/db/sequelize/category.model";
 import { CreateCategoryUseCase } from "./create-category.use-case";

@@ -1,6 +1,6 @@
+import { Uuid } from '@core/shared/domain/value-objects/uuid.vo';
 import { LoadEntityError } from '../../../../shared/domain/validators/validation.error';
 import { Category } from '../../../domain/category.aggregate';
-import { Uuid } from '../../../domain/uuid.vo';
 import { CategoryModel } from './category.model';
 
 export class CategoryModelMapper {

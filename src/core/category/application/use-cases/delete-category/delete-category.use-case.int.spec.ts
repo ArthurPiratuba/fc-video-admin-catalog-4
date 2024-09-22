@@ -1,10 +1,10 @@
 import { NotFoundError } from "@core/shared/domain/errors/not-found.error";
 import { setupSequelize } from "../../../../shared/infra/testing/helpers";
 import { Category } from "../../../domain/category.aggregate";
-import { Uuid } from "../../../domain/uuid.vo";
 import { CategorySequelizeRepository } from "../../../infra/db/sequelize/category-sequelize.repository";
 import { CategoryModel } from "../../../infra/db/sequelize/category.model";
 import { DeleteCategoryUseCase } from "./delete-category.use-case";
+import { Uuid } from "@core/shared/domain/value-objects/uuid.vo";
 
 describe('DeleteCategoryUseCase Integration Tests', () => {
   let useCase: DeleteCategoryUseCase;

@@ -1,4 +1,4 @@
-import { InvalidUuidError, Uuid } from "@core/category/domain/uuid.vo";
+import { InvalidUuidError, Uuid } from "../value-objects/uuid.vo";
 
 describe("Uuid unit tests", function () {
 
@@ -19,4 +19,4 @@ describe("Uuid unit tests", function () {
         const uuid = new Uuid(id);
         expect(uuid.id).toBe(id);
     });
-});
+}); 
