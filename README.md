@@ -20,3 +20,4 @@ Bom trabalho!
 - Carregamento assincrono de módulos
 - Fixture
 - Testes End-to-end (e2e)
+- Utilizar um tipo específico para cada identidade (regra de ouro do DDD), ex: utilizar CategoryId ao invés de Id.

@@ -6,7 +6,7 @@ import { CategoriesController } from '../../src/nest-modules/categories-module/c
 import { CategoryOutputMapper } from '../../src/core/category/application/use-cases/common/category-output';
 import { instanceToPlain } from 'class-transformer';
 import { startApp } from '../../src/nest-modules/shared-module/testing/helper';
-import { Uuid } from '../../src/core/category/domain/uuid.vo';
+import { Uuid } from '@core/shared/domain/value-objects/uuid.vo';
 
 describe('CategoriesController (e2e)', () => {
     const appHelper = startApp();
@@ -65,7 +65,7 @@ describe('CategoriesController (e2e)', () => {
             test.each(arrange)('when body is $label', ({ value }) => {
                 return request(appHelper.app.getHttpServer())
                     .post('/categories')
-                   // .authenticate(appHelper.app)
+                    // .authenticate(appHelper.app)
                     .send(value.send_data)
                     .expect(422)
                     .expect(value.expected);
