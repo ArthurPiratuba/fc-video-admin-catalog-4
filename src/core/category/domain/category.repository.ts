@@ -1,10 +1,10 @@
 
 
+import { Uuid } from "@core/shared/domain/value-objects/uuid.vo";
 import { SearchableRepository } from "../../shared/domain/repository/repository.interface";
 import { SearchParams } from "../../shared/domain/repository/search-params";
 import { SearchResult } from "../../shared/domain/repository/search-result";
 import { Category } from "./category.aggregate";
-import { Uuid } from "./uuid.vo";
 
 export type CategoryFilter = string
 
